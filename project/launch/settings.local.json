@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(anthropic-skills:pdf)",
+      "Skill(anthropic-skills:pdf:*)",
+      "Read(//c/Users/ketsu/Downloads/**)",
+      "Bash(python -c ' *)",
+      "Bash(pip install *)",
+      "PowerShell(pip install pdfplumber -q)",
+      "PowerShell(Get-Content \"$env:TEMP\\\\uvicorn_err2.txt\" | Select-Object -Last 10)",
+      "PowerShell(.venv\\\\Scripts\\\\python -c \"import mistralai; print\\(dir\\(mistralai\\)\\)\")",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\ketsu\\\\cocktail-app\\\\.venv\\\\Scripts\\\\\" | Select-Object Name | Where-Object { $_.Name -notmatch \"\\\\.pyd$|\\\\.dll$\" } | Select-Object -First 30)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(curl -s -m 5 http://127.0.0.1:8000/auth/me -w \"\\\\nHTTP %{http_code}\\\\n\")",
+      "Bash(curl -s -m 5 http://127.0.0.1:8000/api/favorites/ids -w \"\\\\nHTTP %{http_code}\\\\n\")",
+      "Bash(.venv/Scripts/python.exe -m alembic current)",
+      "Bash(.venv/Scripts/alembic.exe current *)",
+      "Bash(.venv/Scripts/python.exe -c \"import sqlite3; c=sqlite3.connect\\('cocktails.db'\\); print\\(c.execute\\('select version_num from alembic_version'\\).fetchall\\(\\)\\); print\\([r[0] for r in c.execute\\(\\\\\"select name from sqlite_master where type='table'\\\\\"\\).fetchall\\(\\)]\\)\")",
+      "Bash(.venv/Scripts/python.exe -c \"from alembic.config import main; print\\('ok'\\)\")",
+      "Bash(.venv/Scripts/python.exe -m pip list)",
+      "Bash(/c/Python314/python.exe -m alembic current)",
+      "Bash(/c/Python314/python.exe -c \"import sqlite3; c=sqlite3.connect\\('cocktails.db'\\); print\\('count:', c.execute\\('select count\\(*\\) from cocktails'\\).fetchone\\(\\)[0]\\); [print\\(r\\) for r in c.execute\\('select cocktail_id, cocktail_name from cocktails order by cocktail_name limit 5'\\).fetchall\\(\\)]\")"
+    ]
+  }
+}
